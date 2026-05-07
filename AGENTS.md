@@ -9,6 +9,7 @@
 
 ## Skill Routing
 
+- Use `$agentic-harness-engineering` before large, agent-first features that need repo-local context, execution plans, validation loops, or guardrails before implementation.
 - Use `$agentic-brief` before non-trivial features, migrations, refactors, or ambiguous UI/API changes.
 - Use `$agentic-tdd` when the desired behavior is clear enough to implement and verify.
 - Use `$agentic-diagnose` for bugs, regressions, flaky tests, or unexpected runtime behavior.

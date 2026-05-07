@@ -1,7 +1,7 @@
 {
   "name": "agentic-engineering-kit",
-  "version": "0.1.0",
-  "description": "Codex skills for scoped planning, test-first implementation, evidence-based debugging, and project guardrail scaffolding.",
+  "version": "0.2.0",
+  "description": "Codex skills for harness engineering, scoped planning, test-first implementation, evidence-based debugging, and project guardrail scaffolding.",
   "author": {
     "name": "Local",
     "email": "",
@@ -13,6 +13,7 @@
   "keywords": [
     "codex",
     "agentic-engineering",
+    "harness-engineering",
     "tdd",
     "debugging",
     "guardrails"
@@ -20,22 +21,23 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Agentic Engineering Kit",
-    "shortDescription": "Scoped planning, TDD, debugging, and guardrails for Codex projects.",
-    "longDescription": "A local Codex plugin that packages agentic engineering workflows: clarify non-trivial work before coding, implement clear slices with test-first verification, diagnose bugs from reproduction evidence, and scaffold project guardrails.",
+    "shortDescription": "Harness engineering and guardrails for Codex projects.",
+    "longDescription": "A local Codex plugin that packages agentic engineering workflows: design Codex-readable repository harnesses, clarify non-trivial work before coding, implement clear slices with test-first verification, diagnose bugs from reproduction evidence, and scaffold project guardrails.",
     "developerName": "Local",
     "category": "Productivity",
     "capabilities": [
       "Planning",
       "Coding",
       "Debugging",
-      "Scaffolding"
+      "Scaffolding",
+      "Harness Engineering"
     ],
     "websiteURL": "",
     "privacyPolicyURL": "",
     "termsOfServiceURL": "",
     "defaultPrompt": [
+      "Use $agentic-harness-engineering before this large feature.",
       "Use $agentic-scaffold to apply this kit here.",
-      "Use $agentic-brief before coding this feature.",
       "Use $agentic-diagnose to debug this from reproduction."
     ],
     "brandColor": "#2563EB"

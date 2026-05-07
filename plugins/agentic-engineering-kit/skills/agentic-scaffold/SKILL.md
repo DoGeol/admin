@@ -1,6 +1,6 @@
 ---
 name: agentic-scaffold
-description: Use when applying the Agentic Engineering Kit to a Codex project or repository, including adding project-level guardrails, wiring a local plugin marketplace entry, preserving existing AGENTS.md instructions, and explaining how to use the included agentic-brief, agentic-tdd, and agentic-diagnose skills.
+description: Use when applying the Agentic Engineering Kit to a Codex project or repository, including adding project-level guardrails, wiring a local plugin marketplace entry, preserving existing AGENTS.md instructions, and explaining how to use the included agentic-harness-engineering, agentic-brief, agentic-tdd, and agentic-diagnose skills.
 ---
 
 # Agentic Scaffold
@@ -50,6 +50,7 @@ Use this section when the target project does not already have equivalent guidan
 
 ## Skill Routing
 
+- Use `$agentic-harness-engineering` before large, agent-first features that need repo-local context, execution plans, validation loops, or guardrails before implementation.
 - Use `$agentic-brief` before non-trivial features, migrations, refactors, or ambiguous UI/API changes.
 - Use `$agentic-tdd` when the desired behavior is clear enough to implement and verify.
 - Use `$agentic-diagnose` for bugs, regressions, flaky tests, or unexpected runtime behavior.
@@ -65,6 +66,10 @@ Use this section when the target project does not already have equivalent guidan
 - Stop when the target repo can discover the plugin and the usage prompts are documented.
 
 ## Usage Prompts
+
+```text
+Use $agentic-harness-engineering to design a Codex-readable harness before implementation.
+```
 
 ```text
 Use $agentic-brief to turn this request into a compact implementation brief before coding.
