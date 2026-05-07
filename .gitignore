@@ -1,0 +1,28 @@
+# Local IDE state
+.idea/
+.vscode/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment and local config
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
