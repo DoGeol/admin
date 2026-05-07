@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic TDD"
+  short_description: "Implement with test-first slices"
+  default_prompt: "Use $agentic-tdd to implement the first slice with a failing test, minimal code, and verification."

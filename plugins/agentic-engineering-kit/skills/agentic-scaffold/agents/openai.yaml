@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic Scaffold"
+  short_description: "Apply agentic guardrails to a repo"
+  default_prompt: "Use $agentic-scaffold to apply the Agentic Engineering Kit to this Codex project."

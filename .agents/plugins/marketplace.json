@@ -1,0 +1,20 @@
+{
+  "name": "admin-local-marketplace",
+  "interface": {
+    "displayName": "Admin Local Plugins"
+  },
+  "plugins": [
+    {
+      "name": "agentic-engineering-kit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agentic-engineering-kit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
