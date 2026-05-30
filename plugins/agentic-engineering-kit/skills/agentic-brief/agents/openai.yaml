@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agentic Brief"
-  short_description: "Clarify scope before coding"
-  default_prompt: "Use $agentic-brief to turn this request into a compact implementation brief before coding."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agentic Harness Engineering"
-  short_description: "Design repo rails for agent-first work"
-  default_prompt: "Use $agentic-harness-engineering to design a Codex-readable harness before implementation."

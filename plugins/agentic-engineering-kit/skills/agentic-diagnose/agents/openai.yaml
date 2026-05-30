@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agentic Diagnose"
-  short_description: "Debug from reproduction evidence"
-  default_prompt: "Use $agentic-diagnose to reproduce this bug, gather evidence, find root cause, and add a regression check."
