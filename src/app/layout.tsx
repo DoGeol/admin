@@ -2,7 +2,10 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Admin",
+  title: {
+    default: "Admin",
+    template: "%s | Admin",
+  },
   description: "shadcn/ui 기반 어드민 프로젝트",
 }
 

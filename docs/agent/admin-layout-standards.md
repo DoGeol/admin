@@ -14,6 +14,7 @@
 - page-level action은 top bar에 섞지 않고 content header 또는 action row에 둔다.
 - 공통 content shell은 page header, optional actions, optional filter row, primary surface, pagination 또는 detail `Sheet`/`Dialog` 순서로 구성한다.
 - 페이지별 업무 화면은 메뉴마다 달라질 수 있다. layout shell은 CRUD, approval queue, dashboard 같은 개별 화면의 구체 UI를 강제하지 않는다.
+- URL 구조와 GitHub Pages base path는 `docs/agent/routing-standards.md`를 우선한다. 실제 어드민 앱은 `/` 기준이며, 앱 내부에 `/admin` route segment를 만들지 않는다.
 
 ## Sidebar 메뉴 모델
 

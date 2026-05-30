@@ -2,7 +2,7 @@
 
 ## Purpose
 
-이 저장소는 Next.js, React 19, shadcn/ui, Tailwind CSS v4로 어드민 제품을 만들기 위한 작업 공간이다. 이 파일은 짧고 지속적인 지침만 담는다. 시각 언어와 디자인 판단은 `DESIGN.md`를 따르고, 자세한 UI, 컴포넌트, 검증 규칙은 `docs/agent/admin-ui-standards.md`를 따르며, admin layout/menu 규칙은 `docs/agent/admin-layout-standards.md`, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 따른다.
+이 저장소는 Next.js, React 19, shadcn/ui, Tailwind CSS v4로 어드민 제품을 만들기 위한 작업 공간이다. 이 파일은 짧고 지속적인 지침만 담는다. 시각 언어와 디자인 판단은 `DESIGN.md`를 따르고, 자세한 UI, 컴포넌트, 검증 규칙은 `docs/agent/admin-ui-standards.md`를 따르며, admin layout/menu 규칙은 `docs/agent/admin-layout-standards.md`, URL과 GitHub Pages 배포 기준은 `docs/agent/routing-standards.md`, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 따른다.
 
 ## Skill Routing
 
@@ -20,6 +20,7 @@
 - 기본 sans-serif 폰트는 `pretendard` 패키지의 `Pretendard Variable` 가변 다이나믹 서브셋을 사용한다. 별도 요청이 없으면 `next/font/google`이나 원격 CDN 폰트 import를 새로 도입하지 않는다.
 - UI를 구현하거나 수정할 때는 먼저 `DESIGN.md`의 Linear 기반 정밀 SaaS admin 방향을 확인한다.
 - admin shell과 편집 가능한 Sidebar 메뉴를 다룰 때는 `docs/agent/admin-layout-standards.md`를 우선한다.
+- route를 추가하거나 링크를 만들 때는 `docs/agent/routing-standards.md`를 확인한다. 앱 내부 route에 `/admin` segment를 직접 만들지 않는다.
 - 애니메이션은 Motion for React를 기본 선택으로 사용한다. 단순 색상/opacity transition을 제외한 enter/exit, layout, gesture, shared transition은 Motion으로 구현한다.
 - 어드민 화면은 조밀하고 업무 중심적인 인터페이스로 다룬다. landing-page composition, oversized hero section, nested card, decorative gradient를 피한다.
 - 변경은 요청 범위에 한정한다. skill 자체 업데이트가 목적이 아니라면 upstream skill 파일 내용은 보존한다.
