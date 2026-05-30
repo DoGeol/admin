@@ -1,6 +1,6 @@
 # shadcn Admin UI Standards
 
-이 문서는 이 저장소에서 Codex가 "shadcn으로 만드는 어드민" 작업을 수행할 때 따라야 할 기술 제원과 UI 생성 규칙을 정리한다. 루트 `AGENTS.md`는 짧은 라우팅 지침만 담고, 실제 판단 기준은 이 문서를 우선 참고한다.
+이 문서는 이 저장소에서 Codex가 "shadcn으로 만드는 어드민" 작업을 수행할 때 따라야 할 기술 제원과 UI 생성 규칙을 정리한다. 루트 `AGENTS.md`는 짧은 라우팅 지침만 담고, 실제 판단 기준은 이 문서를 우선 참고한다. Sidebar shell과 편집 가능한 menu builder를 다룰 때는 `docs/agent/admin-layout-standards.md`를 함께 따른다.
 
 ## Source Baseline
 
@@ -51,7 +51,7 @@
 - Field validation uses both container and control state: `data-invalid` on `Field`, `aria-invalid` on the control; `data-disabled` on `Field`, `disabled` on the control.
 - Option sets with a small fixed number of choices use `ToggleGroup`, `RadioGroup`, `Select`, or `Tabs` based on interaction semantics, not repeated active-state buttons.
 - Tables use shadcn table primitives with explicit empty, loading, pagination, sorting, and filter states.
-- Sidebar navigation uses the shadcn sidebar pattern when available. Keep primary navigation persistent on desktop and sheet/drawer-based on mobile.
+- Sidebar navigation uses the shadcn sidebar pattern when available. Keep primary navigation persistent on desktop and sheet/drawer-based on mobile. Editable Sidebar/menu-builder details are defined in `docs/agent/admin-layout-standards.md`.
 - Toasts use Sonner. Loading states use `Skeleton`. Empty states use `Empty`. Status labels use `Badge`. Separators use `Separator`.
 - Button loading states use `Spinner` plus `disabled`; do not invent `isLoading` or `isPending` props for shadcn `Button`.
 - `TabsTrigger` must be inside `TabsList`. `Avatar` must include `AvatarFallback`.
@@ -101,6 +101,7 @@
 - Documentation-only changes:
   - `test -f AGENTS.md`
   - `test -f docs/agent/admin-ui-standards.md`
+  - `test -f docs/agent/admin-layout-standards.md`
   - `find .agents/skills -maxdepth 2 -name SKILL.md | sort`
   - `test ! -d .codex/skills`
 - Future app changes:

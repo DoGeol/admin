@@ -2,7 +2,7 @@
 
 ## Purpose
 
-이 저장소는 Next.js, React 19, shadcn/ui, Tailwind CSS v4로 어드민 제품을 만들기 위한 작업 공간이다. 이 파일은 짧고 지속적인 지침만 담는다. 자세한 UI, 컴포넌트, 검증 규칙은 `docs/agent/admin-ui-standards.md`를 따르고, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 따른다.
+이 저장소는 Next.js, React 19, shadcn/ui, Tailwind CSS v4로 어드민 제품을 만들기 위한 작업 공간이다. 이 파일은 짧고 지속적인 지침만 담는다. 자세한 UI, 컴포넌트, 검증 규칙은 `docs/agent/admin-ui-standards.md`를 따르고, admin layout/menu 규칙은 `docs/agent/admin-layout-standards.md`를 따르며, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 따른다.
 
 ## Skill Routing
 
@@ -14,8 +14,10 @@
 ## Working Rules
 
 - 사용자가 명시적으로 요청하지 않으면 앱 scaffold, package 설치, `shadcn init`을 실행하지 않는다.
+- 문서, 주석, 사용자에게 보이는 텍스트는 한글을 기본으로 사용한다. 한글로 쓰기 어려운 기술 고유명사, API 이름, 패키지 이름, 명령어, 파일 경로만 영어 원문을 유지한다.
 - custom UI를 만들기 전에 shadcn/ui가 제공하는 컴포넌트나 패턴이 있는지 먼저 확인한다.
 - semantic design token과 Tailwind v4 CSS-first convention을 따른다. 제품 UI에 raw color utility를 새로 도입하지 않는다.
+- admin shell과 편집 가능한 Sidebar 메뉴를 다룰 때는 `docs/agent/admin-layout-standards.md`를 우선한다.
 - 애니메이션은 Motion for React를 기본 선택으로 사용한다. 단순 색상/opacity transition을 제외한 enter/exit, layout, gesture, shared transition은 Motion으로 구현한다.
 - 어드민 화면은 조밀하고 업무 중심적인 인터페이스로 다룬다. landing-page composition, oversized hero section, nested card, decorative gradient를 피한다.
 - 변경은 요청 범위에 한정한다. skill 자체 업데이트가 목적이 아니라면 upstream skill 파일 내용은 보존한다.
