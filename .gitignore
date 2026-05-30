@@ -17,12 +17,23 @@ logs/
 
 # Dependencies and build output
 node_modules/
+.next/
+out/
 dist/
 build/
 coverage/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
 
 # Temporary files
 tmp/
 temp/
 *.tmp
 *.swp
+
+# Package manager debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
