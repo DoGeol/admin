@@ -1,6 +1,6 @@
 # shadcn 어드민 UI 표준
 
-이 문서는 이 저장소에서 Codex가 "shadcn으로 만드는 어드민" 작업을 수행할 때 따라야 할 기술 제원과 UI 생성 규칙을 정의한다. 루트 `AGENTS.md`는 짧은 라우팅 지침만 담고, 시각 언어는 루트 `DESIGN.md`, admin shell과 편집 가능한 menu builder는 `docs/agent/admin-layout-standards.md`, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 함께 따른다.
+이 문서는 이 저장소에서 Codex가 "shadcn으로 만드는 어드민" 작업을 수행할 때 따라야 할 기술 제원과 UI 생성 규칙을 정의한다. 루트 `AGENTS.md`는 짧은 라우팅 지침만 담고, 시각 언어는 루트 `DESIGN.md`, 재사용 가능한 admin block과 theme 확장 기준은 `docs/agent/reusable-admin-standards.md`, admin shell과 편집 가능한 menu builder는 `docs/agent/admin-layout-standards.md`, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 함께 따른다.
 
 ## 기준 문서
 
@@ -47,6 +47,10 @@
 ## shadcn/ui 조합 규칙
 
 - custom markup을 만들기 전에 shadcn component가 있는지 먼저 확인한다.
+- 반복 사용 가능한 admin composition은 route page 안에 직접 쌓지 말고 `src/components/admin` 후보로 검토한다.
+- `src/components/ui`는 shadcn generated component 영역으로 유지하고, app-specific business logic을 넣지 않는다.
+- `/docs`는 reusable admin block의 사용 예시와 theme 검증 공간으로 사용한다.
+- registry-ready한 구조는 유지하되, registry output과 namespace는 별도 요청 전까지 만들지 않는다.
 - card가 적합한 곳에서는 `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter` 구조를 갖춘다.
 - `Dialog`, `Sheet`, `Drawer`에는 접근 가능한 title이 반드시 있어야 한다.
 - 시각적으로 제목을 숨겨야 할 때는 같은 의미의 label이 화면에 있는지 확인하고 `sr-only` title을 둔다.
@@ -70,6 +74,9 @@
 - CSS-first Tailwind v4 convention을 따른다. `@import "tailwindcss";`, `@theme`, project CSS variable을 우선한다.
 - font token은 `src/app/globals.css`에서 관리한다. 기본 sans-serif는 `pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css`와 `"Pretendard Variable"` stack을 사용한다.
 - component markup에서는 `bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-card`, `text-card-foreground`, `bg-primary`, `text-primary-foreground` 같은 semantic token을 사용한다.
+- 어드민별 theme은 CSS variable set 교체로 처리한다. `data-admin-theme` 같은 attribute 기반 확장을 우선 검토한다.
+- `--action`, `--success`, `--insight` 같은 project token은 필요할 때 `@theme inline`에 등록한 뒤 semantic utility로 사용한다.
+- theme metadata는 필요할 때 `src/lib/themes.ts` 같은 serializable helper에 두고, reusable admin block은 theme id를 직접 읽지 않는다.
 - `bg-blue-500`, `text-slate-700`, one-off hex value 같은 raw product color를 component markup에 새로 넣지 않는다.
 - child 사이 간격은 `gap-*`을 사용한다. 새 layout에 `space-x-*`, `space-y-*`를 쓰지 않는다.
 - width와 height가 같으면 `size-*`를 사용한다.

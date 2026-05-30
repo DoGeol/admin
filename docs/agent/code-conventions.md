@@ -26,9 +26,14 @@
 - Next.js special file은 App Router convention을 따른다: `page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx`, `not-found.tsx`, `route.ts`.
 - `components/ui`는 shadcn generated component 영역으로 취급한다.
 - 제품 요구로 shadcn generated component를 수정할 때도 shadcn composition과 token 규칙을 유지한다.
-- 제품 전용 reusable component는 기능 또는 domain 근처에 둔다.
+- 재사용 가능한 admin block은 `src/components/admin`에 둔다.
+- `/docs` 전용 component는 `src/components/docs`에 둔다.
+- route 한 곳에만 쓰는 component는 해당 route 가까이에 둔다.
 - 전역 공유가 실제로 필요할 때만 shared component로 승격한다.
 - 공통 utility는 `src/lib` 계열에 둔다.
+- 나중에 package나 registry로 분리될 수 있는 코드는 route, storage, app-specific API에 직접 의존하지 않게 한다.
+- `src/components/admin`에서 `src/app`을 import하지 않는다.
+- reusable admin block은 `localStorage`, `sessionStorage`, URL hook, app store를 내부에 숨기지 않고 props나 composition으로 값을 받는다.
 - 앱 생성 전에는 정확한 path를 계획에 명시하고, 생성 후에는 실제 alias와 폴더 구조를 따른다.
 - 한 파일이 서로 다른 책임을 갖기 시작하면 작은 파일로 나눈다.
 - 관련 없는 선행 refactor는 하지 않는다.
@@ -82,6 +87,8 @@
 - semantic token을 우선하고 raw color utility를 새로 쓰지 않는다.
 - 기본 sans-serif font는 `pretendard` package의 `Pretendard Variable` 가변 다이나믹 서브셋을 사용한다.
 - build가 network에 의존하지 않도록 `next/font/google`이나 CDN import를 기본값으로 쓰지 않는다.
+- 어드민별 theme은 component class branch가 아니라 `src/app/globals.css`의 CSS variable set과 `data-admin-theme` attribute로 처리한다.
+- custom project token은 `@theme inline`에 등록한 뒤 semantic utility로 사용한다.
 - layout spacing은 `gap-*`을 기본으로 한다.
 - `cn()`은 조건부 layout/state class 병합용이다.
 - shadcn component의 color, typography, overlay stacking을 우회하는 허가로 `cn()`을 사용하지 않는다.

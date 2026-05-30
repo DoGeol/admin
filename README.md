@@ -1,6 +1,12 @@
 # admin
 
-Next.js App Router, React 19, shadcn/ui, Tailwind CSS v4 기반 어드민 프로젝트입니다.
+Next.js App Router, React 19, shadcn/ui, Tailwind CSS v4 기반 어드민 foundation입니다. 실제 어드민 preview와 `/docs` 문서를 함께 운영하면서, 나중에 보일러플레이트나 내부 UI package로 분리하기 쉬운 구조를 목표로 합니다.
+
+## 목표
+
+- `/`에서 실제 어드민 화면을 빠르게 검증합니다.
+- `/docs`에서 shadcn 기반 컴포넌트 조합, 화면 패턴, theme 예시를 문서화합니다.
+- registry 구현은 아직 포함하지 않고, 먼저 `src/components/admin` 중심의 내부 재사용 구조를 정리합니다.
 
 ## 개발
 

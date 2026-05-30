@@ -2,7 +2,7 @@
 
 ## Purpose
 
-이 저장소는 Next.js, React 19, shadcn/ui, Tailwind CSS v4로 어드민 제품을 만들기 위한 작업 공간이다. 이 파일은 짧고 지속적인 지침만 담는다. 시각 언어와 디자인 판단은 `DESIGN.md`를 따르고, 자세한 UI, 컴포넌트, 검증 규칙은 `docs/agent/admin-ui-standards.md`를 따르며, admin layout/menu 규칙은 `docs/agent/admin-layout-standards.md`, URL과 GitHub Pages 배포 기준은 `docs/agent/routing-standards.md`, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 따른다.
+이 저장소는 Next.js, React 19, shadcn/ui, Tailwind CSS v4로 어드민 제품과 재사용 가능한 admin foundation을 만들기 위한 작업 공간이다. 이 파일은 짧고 지속적인 지침만 담는다. 시각 언어와 디자인 판단은 `DESIGN.md`를 따르고, 자세한 UI, 컴포넌트, 검증 규칙은 `docs/agent/admin-ui-standards.md`를 따르며, 재사용 가능한 admin block과 테마 확장 규칙은 `docs/agent/reusable-admin-standards.md`, admin layout/menu 규칙은 `docs/agent/admin-layout-standards.md`, URL과 GitHub Pages 배포 기준은 `docs/agent/routing-standards.md`, 코드 작성 규칙은 `docs/agent/code-conventions.md`를 따른다.
 
 ## Skill Routing
 
@@ -16,7 +16,11 @@
 - 사용자가 명시적으로 요청하지 않으면 앱 scaffold, package 설치, `shadcn init`을 실행하지 않는다.
 - 문서, 주석, 사용자에게 보이는 텍스트는 한글을 기본으로 사용한다. 한글로 쓰기 어려운 기술 고유명사, API 이름, 패키지 이름, 명령어, 파일 경로만 영어 원문을 유지한다.
 - custom UI를 만들기 전에 shadcn/ui가 제공하는 컴포넌트나 패턴이 있는지 먼저 확인한다.
+- 이 레포는 future boilerplate/package/registry 전환을 고려한다. 재사용 가능한 admin block은 app route와 분리하고 `docs/agent/reusable-admin-standards.md`를 따른다.
+- `src/components/ui`는 shadcn generated component 영역으로 보고, 여러 어드민에서 재사용할 조합 컴포넌트는 `src/components/admin` 후보로 검토한다.
+- registry 구현은 사용자가 별도 요청하기 전까지 만들지 않는다. 현재는 내부 컴포넌트 분리와 theme-ready 구조를 우선한다.
 - semantic design token과 Tailwind v4 CSS-first convention을 따른다. 제품 UI에 raw color utility를 새로 도입하지 않는다.
+- 어드민별 테마 차이는 component fork가 아니라 CSS variable 기반 semantic token과 theme attribute로 해결한다.
 - 기본 sans-serif 폰트는 `pretendard` 패키지의 `Pretendard Variable` 가변 다이나믹 서브셋을 사용한다. 별도 요청이 없으면 `next/font/google`이나 원격 CDN 폰트 import를 새로 도입하지 않는다.
 - UI를 구현하거나 수정할 때는 먼저 `DESIGN.md`의 Linear 기반 정밀 SaaS admin 방향을 확인한다.
 - admin shell과 편집 가능한 Sidebar 메뉴를 다룰 때는 `docs/agent/admin-layout-standards.md`를 우선한다.
